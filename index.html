@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Real-time Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Real-time Chat</h1>
+            <div class="user-info">
+                <input type="text" id="username" placeholder="Enter your name" maxlength="20">
+            </div>
+        </div>
+        
+        <div class="messages-container" id="messages">
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Start typing..." autocomplete="off">
+        </div>
+    </div>
+    
+    <script type="module" src="client.js"></script>
+</body>
+</html>
