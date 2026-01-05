@@ -24,8 +24,13 @@ class ChatClient {
             this.uiManager,
             this.typingIndicator
         );
+        // Auto-detect WebSocket URL (works for both localhost and production)
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const host = window.location.host;
+        const wsUrl = `${protocol}//${host}`;
+
         this.websocket = new WebSocketManager(
-            'ws://localhost:8080',
+            wsUrl,
             (data) => this.messageHandler.handle(data),
             () => this.onConnected(),
             () => this.onDisconnected(),
